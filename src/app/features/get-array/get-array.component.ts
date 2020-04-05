@@ -3,7 +3,7 @@ import { Genese, GeneseService } from 'genese-angular';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { ArrayOfStrings } from '../models/arrayOfStrings.model';
 import { ArrayOfArraysOfBooks } from '../models/arrayOfArraysOfBooks.model';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class GetArrayComponent implements OnInit {
     public arrayOfArraysOfStringsGenese: Genese<ArrayOfArraysOfStrings>;
     public arrayOfStringsGenese: Genese<ArrayOfStrings>;
     public model = {
-        gnArrayResponse: [[new Book()]],
+        gnArrayResponse: [[new BookSchema()]],
         genese: {
             path: '/array-response/array-of-arrays-of-books'
         }
@@ -69,7 +69,7 @@ export class GetArrayComponent implements OnInit {
      * Get array of arrays of books
      */
     getArrayOfArraysOfBooks(): void {
-        this.arrayOfArraysOfBooksGenese.getArray().subscribe((data: Book[][]) => {
+        this.arrayOfArraysOfBooksGenese.getArray().subscribe((data: BookSchema[][]) => {
             console.log('%c getArrayOfArraysOfBooks data', 'font-weight: bold; color: blue;', data);
         });
     }

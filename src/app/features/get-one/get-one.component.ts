@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Genese, GeneseAngular, GeneseService } from 'genese-angular';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
+import { GET_BOOK } from '../models/get-book.endpoint';
 
 
 @Component({
@@ -28,6 +29,13 @@ export class GetOneComponent implements OnInit {
     ngOnInit(): void {
         this.getBook('1');
         this.getBook('/books/1');
+        this.getWithEndpoint('1');
+    }
+
+
+
+    getWithEndpoint(id: string) {
+        GET_BOOK
     }
 
 
@@ -37,7 +45,7 @@ export class GetOneComponent implements OnInit {
      * @param idOrPath
      */
     getBook(idOrPath: string): void {
-        this.geneseService.instance(Book).get(idOrPath).subscribe((book: Book) => {
+        this.geneseService.instance(BookSchema).get(idOrPath).subscribe((book: BookSchema) => {
             console.log('%c Get one book ', 'font-weight: bold; color: green;', book);
         });
     }

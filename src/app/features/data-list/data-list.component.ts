@@ -2,7 +2,7 @@ import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Outpu
 import { Genese, GeneseService, GetAllResponse } from 'genese-angular';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 import { tap } from 'rxjs/operators';
 import { homeEnv } from '../homeEnv';
 
@@ -22,8 +22,8 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
     @Output() delete: EventEmitter<string> = new EventEmitter<any>();
     @Output() update: EventEmitter<string> = new EventEmitter<any>();
 
-    public booksGenese: Genese<Book>;
-    public dataSource = new MatTableDataSource<Book>();
+    public booksGenese: Genese<BookSchema>;
+    public dataSource = new MatTableDataSource<BookSchema>();
     public displayedColumns: string[] = [];
     public emptyList = true;
     public pageIndex = 0;
@@ -38,7 +38,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Book);
+        this.booksGenese = geneseService.getGeneseInstance(BookSchema);
     }
 
     /**
@@ -102,7 +102,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
                     pageIndex: this.paginator.pageIndex,
                     pageSize: this.paginator.pageSize
                 })
-            .subscribe((response: {results: Book[], totalResults: number}) => {
+            .subscribe((response: {results: BookSchema[], totalResults: number}) => {
                 console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
                 this.displayMatTableDataSource(response);
             });
@@ -114,7 +114,7 @@ export class DataListComponent implements AfterViewInit, OnChanges, OnInit {
      * Display the app list in a MatTable with pagination
      * @param data
      */
-    displayMatTableDataSource(data: GetAllResponse<Book>) {
+    displayMatTableDataSource(data: GetAllResponse<BookSchema>) {
         this.dataSource = data && Array.isArray(data.results) ? new MatTableDataSource(data.results) : new MatTableDataSource([]);
         this.paginator.length = data && data.totalResults ? data.totalResults : 0;
         this.emptyList = this.paginator.length === 0;

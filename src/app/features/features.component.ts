@@ -85,7 +85,7 @@ export class FeaturesComponent implements OnInit {
     //                 pageIndex: this.paginator.pageIndex,
     //                 pageSize: this.paginator.pageSize
     //             })
-    //         .subscribe((response: {results: Book[], totalResults: number}) => {
+    //         .subscribe((response: {results: BookSchema[], totalResults: number}) => {
     //             console.log('%c getAllWithPagination response ', 'font-weight: bold; color: orange;', response);
     //             this.displayMatTableDataSource(response);
     //         });

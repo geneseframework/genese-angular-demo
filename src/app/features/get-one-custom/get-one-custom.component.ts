@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Genese, GeneseService } from 'genese-angular';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class GetOneCustomComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booksGenese: Genese<Book>;
+    public booksGenese: Genese<BookSchema>;
 
     // --------------------------------------------------
     //                     CONSTRUCTOR
@@ -23,7 +23,7 @@ export class GetOneCustomComponent implements OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Book);
+        this.booksGenese = geneseService.getGeneseInstance(BookSchema);
     }
 
     ngOnInit(): void {
@@ -35,7 +35,7 @@ export class GetOneCustomComponent implements OnInit {
      * @param id
      */
     getOneCustom(id: string): void {
-        this.booksGenese.getOneCustom(`/custom-path/${id}`).subscribe((book: Book) => {
+        this.booksGenese.getOneCustom(`/custom-path/${id}`).subscribe((book: BookSchema) => {
             console.log('%c GeneseAbstract getOneCustom book ', 'font-weight: bold; color: green;', book);
         });
     }

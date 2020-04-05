@@ -4,7 +4,7 @@ import { Author } from '../../../../backend/src/app/models/author.model';
 import { OpenApiSchema } from './endpoint';
 
 
-export class BookSchema extends OpenApiSchema {
+export class Book {
 
     @GnRename('isAvailable')
     public available ?= false;

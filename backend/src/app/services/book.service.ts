@@ -30,7 +30,7 @@ export class BookService extends GenericDataService<Book> {
         return new Promise(resolve => {
             const index = this.books.findIndex(book => book.id === id);
             if (index === -1) {
-                throw new HttpException('Book does not exist!', 404);
+                throw new HttpException('BookSchema does not exist!', 404);
             }
             this.books.splice(index, 1);
             resolve(this.books);

@@ -19,7 +19,7 @@ export abstract class GenericDataService<T> {
         return new Promise(resolve => {
             const book = dataFromDb.find(book => book.id === +id);
             if (!book) {
-                throw new HttpException('Book does not exist!', 404);
+                throw new HttpException('BookSchema does not exist!', 404);
             }
             const result = query && query.gnExtract ? this.extractFieldsFromData(book, query.gnExtract) : book;
             resolve(result);

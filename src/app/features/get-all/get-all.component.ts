@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
 
 
@@ -14,8 +14,8 @@ export class GetAllComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booksGenese: Genese<Book>;
-    public data: Book[] = [];
+    public booksGenese: Genese<BookSchema>;
+    public data: BookSchema[] = [];
     public model = {
         genese: {
             path: '/books'
@@ -29,7 +29,7 @@ export class GetAllComponent implements OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Book);
+        this.booksGenese = geneseService.getGeneseInstance(BookSchema);
     }
 
     ngOnInit(): void {
@@ -40,7 +40,7 @@ export class GetAllComponent implements OnInit {
     getData(): void {
         this.booksGenese
             .getAll()
-            .subscribe((response: Book[]) => {
+            .subscribe((response: BookSchema[]) => {
                 console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
                 this.data = response;
             });

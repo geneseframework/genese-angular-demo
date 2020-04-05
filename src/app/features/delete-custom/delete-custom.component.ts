@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOK } from '../mocks/book.mock';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
 import { homeEnv } from '../homeEnv';
 import { ResponseStatus } from '../../enums/response-status';
@@ -17,7 +17,7 @@ export class DeleteCustomComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booksGenese: Genese<Book>;
+    public booksGenese: Genese<BookSchema>;
     public data: any[] = [];
     public model = {
         genese: {
@@ -32,7 +32,7 @@ export class DeleteCustomComponent implements OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Book);
+        this.booksGenese = geneseService.getGeneseInstance(BookSchema);
     }
 
     ngOnInit(): void {
@@ -51,7 +51,7 @@ export class DeleteCustomComponent implements OnInit {
     getData(): void {
         this.booksGenese
             .getAll()
-            .subscribe((response: Book[]) => {
+            .subscribe((response: BookSchema[]) => {
                 console.log('%c getAll response ', 'font-weight: bold; color: black;', response);
                 this.data = response;
             });

@@ -1,4 +1,4 @@
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 
 export const BOOKS: any[] = [
     {

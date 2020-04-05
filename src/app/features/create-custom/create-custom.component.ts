@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOK } from '../mocks/book.mock';
-import { Book } from '../models/book.model';
+import { BookSchema } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
 import { homeEnv } from '../homeEnv';
 
@@ -16,7 +16,7 @@ export class CreateCustomComponent implements OnInit {
     //                     PROPERTIES
     // --------------------------------------------------
 
-    public booksGenese: Genese<Book>;
+    public booksGenese: Genese<BookSchema>;
     public model = {
         genese: {
             path: '/books'
@@ -30,7 +30,7 @@ export class CreateCustomComponent implements OnInit {
     constructor(
         private geneseService: GeneseService,
     ) {
-        this.booksGenese = geneseService.getGeneseInstance(Book);
+        this.booksGenese = geneseService.getGeneseInstance(BookSchema);
     }
 
     ngOnInit(): void {
@@ -39,7 +39,7 @@ export class CreateCustomComponent implements OnInit {
 
 
     create() {
-        this.booksGenese.createCustom(`${homeEnv.path}/custom-path`, BOOK).subscribe((newBook: Book) => {
+        this.booksGenese.createCustom(`${homeEnv.path}/custom-path`, BOOK).subscribe((newBook: BookSchema) => {
             console.log('%c GeneseAbstract create newBook ', 'font-weight: bold; color: fuchsia;', newBook);
         });
     }
