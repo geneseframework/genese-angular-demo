@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/book.model';
 import { Genese, GeneseService } from 'genese-angular';
+import { Endpoint, RestAction } from '../models/endpoint';
 
 
 @Component({
@@ -39,11 +40,15 @@ export class PostComponent implements OnInit {
 
     post() {
         console.log('%c post this.book ', 'font-weight: bold; color: fuchsia;', this.book);
+        const endpoint: Endpoint = {path: '/books', restAction: RestAction.POST, dataType: Book};
         const instance = this.geneseService.instance();
         console.log('%c post instance ', 'font-weight: bold; color: fuchsia;', instance);
-        this.geneseService.instance().post(this.book).subscribe((newBook: Book) => {
+        this.geneseService.instance().rest(endpoint).subscribe((newBook: Book) => {
             console.log('%c GeneseAbstract post response ', 'font-weight: bold; color: fuchsia;', newBook);
         });
+        // this.geneseService.instance().post(this.book).subscribe((newBook: Book) => {
+        //     console.log('%c GeneseAbstract post response ', 'font-weight: bold; color: fuchsia;', newBook);
+        // });
     }
 
 }
