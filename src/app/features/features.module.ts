@@ -16,6 +16,7 @@ import { UpdateCustomComponent } from './update-custom/update-custom.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { GetArrayComponent } from './get-array/get-array.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -25,15 +26,16 @@ import { GetArrayComponent } from './get-array/get-array.component';
         DeleteComponent,
         DeleteCustomComponent,
         DataListComponent,
-        WelcomeComponent,
+        FeaturesComponent,
         GetAllComponent,
         GetAllCustomComponent,
         GetArrayComponent,
         GetOneComponent,
         GetOneCustomComponent,
-        FeaturesComponent,
+        PostComponent,
         UpdateComponent,
-        UpdateCustomComponent
+        UpdateCustomComponent,
+        WelcomeComponent,
     ],
     imports: [
         CoreModule,

@@ -9,6 +9,7 @@ export type Method =
     | 'get-array'
     | 'get-one'
     | 'get-one-custom'
+    | 'post'
     | 'translate'
     | 'update'
     | 'update-custom';
