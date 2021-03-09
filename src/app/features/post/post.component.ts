@@ -40,7 +40,7 @@ export class PostComponent implements OnInit {
         const endpoint: Endpoint = {path: '/books', restAction: RequestMethod.POST, dataType: Book};
         const instance = this.geneseService.instance();
         console.log('%c post instance ', 'font-weight: bold; color: fuchsia;', instance);
-        this.geneseService.instance().rest(endpoint).subscribe((newBook: Book) => {
+        this.geneseService.instance().post(endpoint.path, instance).subscribe((newBook: Book) => {
             console.log('%c GeneseAbstract post response ', 'font-weight: bold; color: fuchsia;', newBook);
         });
     }
