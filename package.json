@@ -85,5 +85,10 @@
     },
     "resolutions": {
         "minimist": "^1.2.5"
+    },
+    "browser": {
+        "fs": false,
+        "os": false,
+        "path": false
     }
 }
