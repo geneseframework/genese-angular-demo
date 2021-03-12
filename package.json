@@ -6,7 +6,7 @@
         "url": "http://gillesfabre.com/"
     },
     "scripts": {
-        "init": "node ./node_modules/@genese/creator/dist/init/init.js",
+        "creator": "node node_modules/@genese/creator/dist/init/init.js",
         "ng": "ng",
         "reinstall-genese-creator": "npm uninstall @genese/creator && npm i @genese/creator",
         "start": "ng serve",
