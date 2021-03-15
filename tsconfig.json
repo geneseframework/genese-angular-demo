@@ -20,5 +20,8 @@
             "dom"
         ]
     },
-    "include": ["geneseconfig.ts"]
+    "include": [
+        "geneseconfig.ts",
+        "src"
+    ]
 }
