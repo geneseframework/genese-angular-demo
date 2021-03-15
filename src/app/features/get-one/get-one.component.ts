@@ -4,8 +4,8 @@ import { Book } from '../models/book.model';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
-import { isNumericString } from '@genese/creator/dist/src/create/utils/native/strings.util';
-import { Mapper } from '@genese/creator/dist/src';
+import { isNumericString } from '@genese/creator/dist/create/utils/native/strings.util';
+import { Mapper } from '@genese/creator';
 
 
 @Component({
