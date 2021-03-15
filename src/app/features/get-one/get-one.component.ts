@@ -49,7 +49,7 @@ export class GetOneComponent implements OnInit {
             const zzz = isNumericString('test');
             console.log('MAPPED', zzz)
             const mapped: Book = await Mapper.create(Book, book);
-            // console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
+            console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
         });
         // this.geneseService.instance(Book).get(idOrPath).subscribe((book: Book) => {
         //     console.log('%c Get one book ', 'font-weight: bold; color: green;', book);
