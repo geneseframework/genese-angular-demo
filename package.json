@@ -6,7 +6,9 @@
         "url": "http://gillesfabre.com/"
     },
     "scripts": {
+        "creator": "node node_modules/@genese/creator/dist/init/init.js",
         "ng": "ng",
+        "reinstall-genese-creator": "npm uninstall @genese/creator && npm i @genese/creator",
         "start": "ng serve",
         "build": "ng build"
     },
@@ -24,13 +26,13 @@
         "@angular/platform-browser": "^11.2.4",
         "@angular/platform-browser-dynamic": "^11.2.4",
         "@angular/router": "^11.2.4",
-        "@genese/mapper": "^1.0.10",
+        "@genese/creator": "^1.0.13",
         "@nestjs/swagger": "^4.7.15",
         "@ngx-translate/core": "^13.0.0",
         "@ngx-translate/http-loader": "^6.0.0",
         "classlist.js": "^1.1.20150312",
         "core-js": "^3.9.1",
-        "genese-angular": "^1.2.17",
+        "genese-angular": "^1.3.0",
         "hammerjs": "^2.0.8",
         "ionicons": "^5.5.0",
         "moment": "^2.29.1",
