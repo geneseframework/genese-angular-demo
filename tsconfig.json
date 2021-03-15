@@ -22,6 +22,6 @@
     },
     "include": [
         "geneseconfig.ts",
-        "src"
+        "src/app/features/models"
     ]
 }
