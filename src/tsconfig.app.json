@@ -10,6 +10,10 @@
     ],
     "include": [
         "src/**/*.d.ts",
+        "./app/tests/**/*.ts",
         "../genese.config.ts"
+    ],
+    "exclude": [
+        "./temp/check-typing.ts"
     ]
 }

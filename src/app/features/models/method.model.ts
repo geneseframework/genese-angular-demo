@@ -10,6 +10,7 @@ export type Method =
     | 'get-one'
     | 'get-one-custom'
     | 'post'
+    | 'tests'
     | 'translate'
     | 'update'
     | 'update-custom';

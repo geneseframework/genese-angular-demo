@@ -15,6 +15,7 @@ import { UpdateCustomComponent } from './features/update-custom/update-custom.co
 import { WelcomeComponent } from './features/welcome/welcome.component';
 import { GetArrayComponent } from './features/get-array/get-array.component';
 import { PostComponent } from './features/post/post.component';
+import { TestsComponent } from './tests/page/tests.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
             {path: 'get-one', component: GetOneComponent, canActivate: [AuthGuardService]},
             {path: 'get-one-custom', component: GetOneCustomComponent, canActivate: [AuthGuardService]},
             {path: 'post', component: PostComponent, canActivate: [AuthGuardService]},
+            {path: 'tests', component: TestsComponent, canActivate: [AuthGuardService]},
             {path: 'update', component: UpdateComponent, canActivate: [AuthGuardService]},
             {path: 'update-custom', component: UpdateCustomComponent, canActivate: [AuthGuardService]},
         ]
