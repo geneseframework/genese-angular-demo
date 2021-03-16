@@ -1,26 +1,19 @@
 import { TESTS } from './tests.const';
 import { isTestIt, TestType } from './test-type.type';
-import { isArray } from '../../utils/arrays.util';
 import { Mapper } from '@genese/creator/dist/src/create/models/mapper';
 import { logg } from '../../utils/logger.util';
 import { isSameObject } from '@genese/creator/dist/src/create/utils/native/is-same-object.util';
 
 const MAX_DURATION = 50;
 
-export async function expect(testTypes: TestType[], logPassed: boolean, old: boolean): Promise<void>
-export async function expect(testType: TestType, logPassed: boolean, old: boolean): Promise<void>
-export async function expect(testTypes: TestType | TestType[], logPassed: boolean, old: boolean): Promise<void> {
-    if (isArray(testTypes)) {
-        for (const testMapper of includedTestTypes(testTypes)) {
-            await checkTest(testMapper, logPassed, old);
-        }
-    } else {
-        await checkTest(testTypes, logPassed, old);
+export async function expect(testTypes: TestType[]): Promise<void> {
+    for (const testMapper of includedTestTypes(testTypes)) {
+        await checkTest(testMapper);
     }
 }
 
 
-async function checkTest(testType: TestType, logPassed: boolean, old: boolean): Promise<void> {
+async function checkTest(testType: TestType): Promise<void> {
     let result;
     const start = Date.now();
     if (isTestIt(testType)) {
@@ -30,9 +23,7 @@ async function checkTest(testType: TestType, logPassed: boolean, old: boolean): 
     }
     const duration: number = Date.now() - start;
     if ((isExpectedResult(testType, result) && !isTooLong(duration)) || shouldFail(testType)) {
-        if (logPassed) {
-            logg(`Test passed (${duration} ms) : `, testType.title);
-        }
+        logg(`Test passed (${duration} ms) : `, testType.title);
         TESTS.testsPassed++;
         if (testType.options?.log) {
             log(testType, result);

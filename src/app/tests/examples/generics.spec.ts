@@ -1,6 +1,6 @@
 import { TestMapper } from '../engine/test-mapper.model';
 
-export const testMappers: TestMapper[] = [];
+export const genericTestMappers: TestMapper[] = [];
 
 
 // -------------------------------------------   Class with Generic   -----------------------------------------------------
@@ -10,8 +10,8 @@ export class TClass<T> {
     name: string;
 }
 
-testMappers.push(new TestMapper(`{name: 'a'} / TClass<T>`, 'TClass<T>', {name: 'a'}, {isolate: false}));
-testMappers.push(new TestMapper(`'a' / TClass<T> / undefined`, 'TClass<T>', 'a', {expectedValue: undefined, isolate: false}));
+genericTestMappers.push(new TestMapper(`{name: 'a'} / TClass<T>`, 'TClass<T>', {name: 'a'}, {isolate: false}));
+genericTestMappers.push(new TestMapper(`'a' / TClass<T> / undefined`, 'TClass<T>', 'a', {expectedValue: undefined, isolate: false}));
 
 
 // -----------------------------------------   Interface with Generic   ---------------------------------------------------
@@ -21,8 +21,8 @@ export class TInterface<T> {
     name: string;
 }
 
-testMappers.push(new TestMapper(`{name: 'a'} / TInterface<T>`, 'TInterface<T>', {name: 'a'}, {isolate: false}));
-testMappers.push(new TestMapper(`'a' / TInterface<T> / undefined`, 'TInterface<T>', 'a', {expectedValue: undefined, isolate: false}));
+genericTestMappers.push(new TestMapper(`{name: 'a'} / TInterface<T>`, 'TInterface<T>', {name: 'a'}, {isolate: false}));
+genericTestMappers.push(new TestMapper(`'a' / TInterface<T> / undefined`, 'TInterface<T>', 'a', {expectedValue: undefined, isolate: false}));
 
 
 
@@ -31,6 +31,6 @@ testMappers.push(new TestMapper(`'a' / TInterface<T> / undefined`, 'TInterface<T
 
 export type TExtends<T extends string> = T extends string ? string : boolean;
 
-// testMappers.push(new TestMapper(`'a' / TExtends<string>`, 'TExtends<string>', 'a', {isolate: false}));
-// testMappers.push(new TestMapper(`2 / TExtends<string> / undefined`, 'TExtends<string>', 2, {expectedValue: undefined, isolate: false}));
+// primitiveTestMappers.push(new TestMapper(`'a' / TExtends<string>`, 'TExtends<string>', 'a', {isolate: false}));
+// primitiveTestMappers.push(new TestMapper(`2 / TExtends<string> / undefined`, 'TExtends<string>', 2, {expectedValue: undefined, isolate: false}));
 

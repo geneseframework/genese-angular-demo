@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Genese, GeneseService } from 'genese-angular';
+import { GeneseService } from 'genese-angular';
 import { HttpClient } from '@angular/common/http';
-import { geneseEnv } from '../../../genese.config';
-import { Mapper } from '@genese/creator/dist/src/create/models/mapper';
+import { startTests } from '../engine/start-tests';
 
 
 @Component({
-    selector: 'test-page',
-    templateUrl: './test-page.component.html',
-    styleUrls: ['./test-page.component.scss']
+    selector: 'tests',
+    templateUrl: './tests.component.html',
+    styleUrls: ['./tests.component.scss']
 })
-export class TestPageComponent implements OnInit {
+export class TestsComponent implements OnInit {
 
 
 
     constructor(
-        private geneseService: GeneseService,
-        private http: HttpClient
     ) {
     }
 
@@ -28,7 +25,8 @@ export class TestPageComponent implements OnInit {
 
 
     async tests(): Promise<void> {
-        const data = {name: 'Léa', friend: {name: 'Léo'}};
+        await startTests();
+        // const data = {name: 'Léa', friend: {name: 'Léo'}};
         // const person: Person = await Mapper.create(Person, data) as any;
         // console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
         // person.hello();

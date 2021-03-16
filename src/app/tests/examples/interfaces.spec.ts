@@ -1,7 +1,7 @@
 import { ColorSupport } from 'chalk';
 import { TestMapper } from '../engine/test-mapper.model';
 
-export const testMappers: TestMapper[] = [];
+export const interfaceTestMappers: TestMapper[] = [];
 
 
 // ---------------------------------------------   With optional property   -----------------------------------------------
@@ -12,10 +12,10 @@ export interface AnimalSpec {
     otherName?: string;
 }
 
-testMappers.push(new TestMapper(`{name: 'Biela'} / PreySpec`, 'AnimalSpec', {name: 'Biela'}, {isolate: false}));
-testMappers.push(new TestMapper(`{name: 'Biela', otherName: 'Kitty'} / PreySpec`, 'AnimalSpec', {name: 'Biela', otherName: 'Kitty'}, {isolate: false}));
-testMappers.push(new TestMapper(`{otherName: 'Kitty'} / PreySpec / undefined`, 'AnimalSpec', {otherName: 'Kitty' }, {expectedValue: undefined, isolate: false}));
-testMappers.push(new TestMapper(`{unknownProperty: 'Biela'} / PreySpec / undefined`, 'AnimalSpec', {unknownProperty: 'Biela' }, {expectedValue: undefined, isolate: false}));
+interfaceTestMappers.push(new TestMapper(`{name: 'Biela'} / PreySpec`, 'AnimalSpec', {name: 'Biela'}, {isolate: false}));
+interfaceTestMappers.push(new TestMapper(`{name: 'Biela', otherName: 'Kitty'} / PreySpec`, 'AnimalSpec', {name: 'Biela', otherName: 'Kitty'}, {isolate: false}));
+interfaceTestMappers.push(new TestMapper(`{otherName: 'Kitty'} / PreySpec / undefined`, 'AnimalSpec', {otherName: 'Kitty' }, {expectedValue: undefined, isolate: false}));
+interfaceTestMappers.push(new TestMapper(`{unknownProperty: 'Biela'} / PreySpec / undefined`, 'AnimalSpec', {unknownProperty: 'Biela' }, {expectedValue: undefined, isolate: false}));
 
 
 // ------------------------------------------   With property which has Type   --------------------------------------------
@@ -25,7 +25,7 @@ export class AnimalOwner {
     animal: AnimalSpec;
 }
 
-testMappers.push(new TestMapper(`{animal: { name: 'Biela' }} / AnimalOwner`, 'AnimalOwner', {animal: { name: 'Biela' }}));
+interfaceTestMappers.push(new TestMapper(`{animal: { name: 'Biela' }} / AnimalOwner`, 'AnimalOwner', {animal: { name: 'Biela' }}));
 
 
 // ----------------------------------------------   External interfaces   -------------------------------------------------
@@ -46,6 +46,6 @@ const colorSupportWithNullAndUndefined: ColorSupport = {
 }
 
 // TODO: Fix cases of node_modules and external imports
-// testMappers.push(new TestMapper(`valid ColorSupport / ColorSupport `, 'ColorSupport', colorSupport, {isolate: false}));
-// testMappers.push(new TestMapper(`valid ColorSupport with nulls & undefined / ColorSupport `, 'ColorSupport', colorSupportWithNullAndUndefined, {isolate: false}));
+// primitiveTestMappers.push(new TestMapper(`valid ColorSupport / ColorSupport `, 'ColorSupport', colorSupport, {isolate: false}));
+// primitiveTestMappers.push(new TestMapper(`valid ColorSupport with nulls & undefined / ColorSupport `, 'ColorSupport', colorSupportWithNullAndUndefined, {isolate: false}));
 

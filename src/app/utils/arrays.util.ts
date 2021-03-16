@@ -20,3 +20,15 @@ export function isArray(data: any): data is Array<any> {
 export function areNoyArrays(first: any, last: any): boolean {
     return !isArray(first) || !isArray(last);
 }
+
+export function flat(array: any[]): any[] {
+    if(!array || array.length === 0) {
+        return [];
+    }
+    else if(Array.isArray(array[0])) {
+        return flat(array[0]).concat(flat(array.slice(1)));
+    }
+    else {
+        return [array[0]].concat(flat(array.slice(1)));
+    }
+}
