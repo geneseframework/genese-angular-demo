@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GeneseService } from 'genese-angular';
-import { HttpClient } from '@angular/common/http';
 import { startTests } from '../engine/start-tests';
 
 
@@ -10,7 +8,6 @@ import { startTests } from '../engine/start-tests';
     styleUrls: ['./tests.component.scss']
 })
 export class TestsComponent implements OnInit {
-
 
 
     constructor(
