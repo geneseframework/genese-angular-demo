@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { isNumericString } from '@genese/creator/dist/src/create/utils/native/strings.util';
 import { Mapper } from '@genese/creator/dist/src/create/models/mapper';
+import { Person } from '../models/person';
 
 
 @Component({
@@ -33,6 +34,9 @@ export class GetOneComponent implements OnInit {
     ngOnInit(): void {
         this.getBook('1');
         this.getBook('/books/1');
+        this.tests().then(r => {
+            return;
+        });
     }
 
 
@@ -46,13 +50,18 @@ export class GetOneComponent implements OnInit {
         console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
         this.http.get(path).subscribe(async (book: any) => {
             console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
-            const zzz = isNumericString('test');
-            console.log('MAPPED', zzz)
-            const mapped: Book = await Mapper.create(Book, book);
-            console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
+            // const mapped: Book = await Mapper.create(Book, book);
+            // console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
         });
-        // this.geneseService.instance(Book).get(idOrPath).subscribe((book: Book) => {
-        //     console.log('%c Get one book ', 'font-weight: bold; color: green;', book);
-        // });
+    }
+
+
+    async tests(): Promise<void> {
+        const data = {name: 'Léa', friend: {name: 'Léo'}};
+        const person: Person = await Mapper.create(Person, data) as any;
+        console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
+        person.hello();
+        person.friend.hello();
+        return;
     }
 }
