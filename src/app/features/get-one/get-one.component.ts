@@ -4,7 +4,7 @@ import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Person } from '../models/person';
-import { Mapper } from '@genese/creator';
+import { Mapper } from '@genese/creator/dist/create/models/mapper';
 
 
 @Component({

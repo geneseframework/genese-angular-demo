@@ -1,6 +1,6 @@
 export const geneseConfig = {
     mapper: {
-        differentiateStringsAndNumbers: false,
+        differentiateStringsAndNumbers: true,
         throwTarget: {
             error: true,
             setToUndefined: true
