@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Genese, GeneseService } from 'genese-angular';
-import { Book } from '../models/book.model';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
-import { isNumericString } from '@genese/creator/dist/src/create/utils/native/strings.util';
-import { Mapper } from '@genese/creator/dist/src/create/models/mapper';
 import { Person } from '../models/person';
+import { Mapper } from '@genese/creator';
 
 
 @Component({
