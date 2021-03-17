@@ -17,7 +17,7 @@ primitiveTestMappers.push(new TestMapper(`'blue' / string`, 'string','blue', {is
 primitiveTestMappers.push(new TestMapper(`undefined / string`, 'string',undefined));
 primitiveTestMappers.push(new TestMapper(`null / string`, 'string',null));
 primitiveTestMappers.push(new TestMapper(`2 / string / undefined`, 'string',2, {expectedValue: undefined, isolate: false}));
-primitiveTestMappers.push(new TestMapper(`2 / string & !differentiate / '2'`, 'string',2, {expectedValue: '2', createOptions: {differentiateStringsAndNumbers: false}}));
+primitiveTestMappers.push(new TestMapper(`2 / string & !differentiate / '2'`, 'string',2, {expectedValue: '2', createOptions: {differentiateStringsAndNumbers: true}}));
 
 primitiveTestMappers.push(new TestMapper(`'blue' / string`, String,'blue'));
 
