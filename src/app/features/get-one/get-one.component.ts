@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Person } from '../models/person';
 import { Book } from '../models/book.model';
-import { Mapper } from '@genese/mapper';
+import { Mapper } from '@genese/mapper/dist/create/models/mapper';
 
 
 @Component({
