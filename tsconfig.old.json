@@ -20,5 +20,9 @@
             "dom"
         ]
     },
-    "include": []
+    "include": [
+        "geneseconfig.ts",
+        "src/app/features/models",
+        "src/app/tests/examples"
+    ]
 }

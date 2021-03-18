@@ -1,10 +1,15 @@
-export const geneseConfig = {
+import { GeneseConfig } from '@genese/mapper/dist/create/models/genese-config.model';
+
+export const geneseConfig: GeneseConfig = {
     mapper: {
-        differentiateStringsAndNumbers: false,
-        throwTarget: {
-            error: true,
-            setToUndefined: true
+        behavior: {
+            differentiateStringsAndNumbers: true,
         },
-        tsConfigPath: '',
+        include: [
+            "./backend/src/app/enums/category.ts"
+        ],
+        tsConfigs: [
+            './tsconfig.old.json'
+        ]
     }
 }

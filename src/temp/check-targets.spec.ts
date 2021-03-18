@@ -1,6 +1,6 @@
 // import { TestIt } from '../engine/test-it.model';
-// import { CheckTargetsService } from '@genese/creator/dist/src/create/services/check-targets.service';
-// import { getContainerizedElements, getElements } from '@genese/creator/dist/src/create/utils/target.util';
+// import { CheckTargetsService } from '@genese/mapper/dist/src/create/services/check-targets.service';
+// import { getContainerizedElements, getElements } from '@genese/mapper/dist/src/create/utils/target.util';
 // import { logg } from '../../utils/logger.util';
 // import { checkTypings } from './check-typing';
 //

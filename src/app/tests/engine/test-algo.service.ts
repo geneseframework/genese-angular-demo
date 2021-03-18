@@ -1,8 +1,8 @@
 import { TESTS } from './tests.const';
 import { isTestIt, TestType } from './test-type.type';
 import { logg } from '../../utils/logger.util';
-import { Mapper } from '@genese/creator';
-import { isSameObject } from '@genese/creator/dist/create/utils/native/is-same-object.util';
+import { isSameObject } from '@genese/mapper/dist/create/utils/native/is-same-object.util';
+import { Mapper } from '@genese/mapper/dist/create/models/mapper';
 
 const MAX_DURATION = 50;
 

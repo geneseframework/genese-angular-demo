@@ -4,7 +4,8 @@ import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Person } from '../models/person';
-import { Mapper } from '@genese/creator';
+import { Book } from '../models/book.model';
+import { Mapper } from '@genese/mapper/dist/create/models/mapper';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class GetOneComponent implements OnInit {
         this.arrayOfArraysOfStringsGenese = geneseService.getGeneseInstance(ArrayOfArraysOfStrings);
     }
 
+
     ngOnInit(): void {
         this.getBook('1');
         this.getBook('/books/1');
@@ -36,7 +38,6 @@ export class GetOneComponent implements OnInit {
             return;
         });
     }
-
 
 
     /**
@@ -48,8 +49,8 @@ export class GetOneComponent implements OnInit {
         console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
         this.http.get(path).subscribe(async (book: any) => {
             console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
-            // const mapped: Book = await Mapper.create(Book, book);
-            // console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
+            const mapped: Book = await Mapper.create(Book, book);
+            console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
         });
     }
 
