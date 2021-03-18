@@ -1,4 +1,4 @@
-import { InitService } from '@genese/creator/dist/init/services/init.service';
+import { InitService } from '@genese/mapper/dist/init/services/init.service';
 
 async function init() {
     await InitService.start();

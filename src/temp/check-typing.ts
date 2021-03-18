@@ -4,7 +4,7 @@
 //
 //
 //
-// import { Mapper } from '@genese/creator/dist/src/create/models/mapper';
+// import { Mapper } from '@genese/mapper/dist/src/create/models/mapper';
 //
 // let valueAny: any;
 // let valueUnknown: unknown;
