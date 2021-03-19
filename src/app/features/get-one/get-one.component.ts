@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Person } from '../models/person';
 import { Book } from '../models/book.model';
-import { Mapper } from '@genese/mapper/dist/create/models/mapper';
+import { create } from '@genese/mapper/dist/create/main';
 
 
 @Component({
@@ -49,7 +49,7 @@ export class GetOneComponent implements OnInit {
         console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
         this.http.get(path).subscribe(async (book: any) => {
             console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
-            const mapped: Book = await Mapper.create(Book, book);
+            const mapped: Book = await create(Book, book);
             console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
         });
     }
@@ -57,7 +57,7 @@ export class GetOneComponent implements OnInit {
 
     async tests(): Promise<void> {
         const data = {name: 'Léa', friend: {name: 'Léo'}};
-        const person: Person = await Mapper.create(Person, data) as any;
+        const person: Person = await create(Person, data) as any;
         console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
         person.hello();
         person.friend.hello();
