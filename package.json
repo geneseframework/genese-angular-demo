@@ -10,6 +10,7 @@
         "launch": "npm run init-mapper && ng serve",
         "ng": "ng",
         "reinit": "npm run reinstall-genese-mapper && npm run init-mapper",
+        "reinstall-wp": "npm uninstall wp && npm i wp",
         "reinstall-genese-mapper": "npm uninstall @genese/mapper && npm i @genese/mapper",
         "restart": "npm run reinstall-genese-mapper && npm run init-mapper && npm run start",
         "start": "ng serve",
@@ -38,6 +39,7 @@
         "genese-angular": "^1.3.1",
         "hammerjs": "^2.0.8",
         "ionicons": "^5.5.0",
+        "lodash": "^4.17.21",
         "moment": "^2.29.1",
         "ngx-mask": "^11.1.4",
         "nth-check": "^2.0.0",
@@ -46,6 +48,7 @@
         "rxjs": "^6.6.6",
         "swagger-ui-express": "^4.1.6",
         "web-animations-js": "^2.3.2",
+        "wp": "^1.0.1",
         "zone.js": "~0.11.4"
     },
     "devDependencies": {

@@ -2,8 +2,7 @@ import { TESTS } from './tests.const';
 import { isTestIt, TestType } from './test-type.type';
 import { logg } from '../../utils/logger.util';
 import { isSameObject } from '@genese/mapper/dist/create/utils/native/is-same-object.util';
-import { Mapper } from '@genese/mapper/dist/create/models/mapper';
-
+import { create } from '@genese/mapper/dist/create/main';
 const MAX_DURATION = 50;
 
 export async function expect(testTypes: TestType[]): Promise<void> {
@@ -19,7 +18,7 @@ async function checkTest(testType: TestType): Promise<void> {
     if (isTestIt(testType)) {
         result = await testType.method(testType.data);
     } else {
-        result = await Mapper.create(testType.mapParameter, testType.data, testType.options?.createOptions);
+        result = await create(testType.mapParameter, testType.data, testType.options?.createOptions);
     }
     const duration: number = Date.now() - start;
     if ((isExpectedResult(testType, result) && !isTooLong(duration)) || shouldFail(testType)) {
