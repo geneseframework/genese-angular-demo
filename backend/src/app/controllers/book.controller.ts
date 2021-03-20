@@ -5,6 +5,10 @@ import { Book } from '../models/book.model';
 import { GetAllResponse } from '../../generic/services/generic-data.service';
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Category } from '../enums/category';
+import { sayHello } from 'wp';
+import { create } from '@genese/mapper/dist/create/main';
+import { Author } from '../models/author.model';
+
 
 @ApiTags('Books')
 @Controller('books')
@@ -19,6 +23,10 @@ export class BookController {
         type: Book,
     })
     async getBook(@Param('bookId') bookId, @Query() params) {
+        console.log('GET BOOKKKKKK', bookId);
+        sayHello();
+        const zzz = await create(Author, {firstName: 'Isaac', lastName: 'Asimov'});
+        console.log('AUTHORRRR', zzz);
         const book = await this.booksService.getOne(bookId, params);
         return book;
     }

@@ -3,9 +3,13 @@ import { Genese, GeneseService } from 'genese-angular';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
+// import { sayHello } from 'wp';
 import { Person } from '../models/person';
 import { Book } from '../models/book.model';
+import { sayHello } from 'wp';
 import { create } from '@genese/mapper/dist/create/main';
+// import { sayHello } from 'wp';
+// import { create } from '@genese/mapper/dist/create/main';
 
 
 @Component({
@@ -57,10 +61,11 @@ export class GetOneComponent implements OnInit {
 
     async tests(): Promise<void> {
         const data = {name: 'Léa', friend: {name: 'Léo'}};
-        const person: Person = await create(Person, data) as any;
-        console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
-        person.hello();
-        person.friend.hello();
+        sayHello();
+        // const person: Person = await create(Person, data) as any;
+        // console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
+        // person.hello();
+        // person.friend.hello();
         return;
     }
 }
