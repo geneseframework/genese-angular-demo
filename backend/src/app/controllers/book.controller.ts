@@ -9,6 +9,12 @@ import { sayHello } from 'wp';
 import { create } from '@genese/mapper/dist/create/main';
 import { Author } from '../models/author.model';
 
+export class Person {
+    name: string;
+    hello() {
+        console.log('Hello' + this.name)
+    }
+}
 
 @ApiTags('Books')
 @Controller('books')
@@ -23,12 +29,12 @@ export class BookController {
         type: Book,
     })
     async getBook(@Param('bookId') bookId, @Query() params) {
-        console.log('GET BOOKKKKKK', bookId);
         sayHello();
-        const zzz = await create(Author, {firstName: 'Isaac', lastName: 'Asimov'});
-        console.log('AUTHORRRR', zzz);
-        const book = await this.booksService.getOne(bookId, params);
-        return book;
+        const author = create(Author, {firstName: 'Isaac', lastName: 'Asimov'});
+        console.log('AUTHOR', author);
+        const ppp = create(Person, {name: 'Isaac'});
+        console.log('PERSON', ppp);
+        return await this.booksService.getOne(bookId, params);
     }
 
     @Get()
