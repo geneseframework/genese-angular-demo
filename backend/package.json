@@ -7,7 +7,7 @@
     "scripts": {
         "build": "rimraf dist && tsc -p tsconfig.build.json",
         "init-mapper": "node node_modules/@genese/mapper/dist/init/init.js",
-        "reinstall-genese-mapper": "npm uninstall @genese/mapper && npm i @genese/mapper",
+        "reinstall-genese-mapper": "rm package-lock.json && npm uninstall @genese/mapper && npm i @genese/mapper",
         "reinstall-wp": "npm uninstall wp && npm i wp",
         "restart": "npm run reinstall-genese-mapper && npm run init-mapper && npm run start",
         "format": "prettier --write \"src/**/*.ts\"",
@@ -22,7 +22,7 @@
         "test:e2e": "jest --config ./test/jest-e2e.json"
     },
     "dependencies": {
-        "@genese/mapper": "^1.0.20",
+        "@genese/mapper": "^2.0.0-alpha.0",
         "@nestjs/common": "^6.11.11",
         "@nestjs/core": "^6.11.11",
         "@nestjs/platform-express": "^6.11.11",
