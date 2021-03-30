@@ -22,19 +22,9 @@ export class Book {
     public editions?: {
         name?: string,
         year?: string,
-        gnTranslate ?: {
-            [key: string]: {
-                country: string
-            }
-        }
     }[] = [{
         name: '',
         year: '',
-        gnTranslate: {
-            gnIndexableType: {
-                country: ''
-            }
-        }
     }];
     public editor?: {
         name?: string,

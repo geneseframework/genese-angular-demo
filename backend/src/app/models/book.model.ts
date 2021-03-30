@@ -36,7 +36,7 @@ export class Book {
     public irrelevantProperty?: string;
     public isAvailable?: boolean;
     public librariesClassification?: {
-        [key: string]: string
+        [keyzzz: string]: string
     };
     public librariesRate?: {
         [key: string]: number
