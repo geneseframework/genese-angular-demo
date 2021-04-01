@@ -23,7 +23,7 @@
         "test:e2e": "jest --config ./test/jest-e2e.json"
     },
     "dependencies": {
-        "@genese/mapper": "^2.0.0-alpha.13",
+        "@genese/mapper": "^2.0.0-alpha.17",
         "@nestjs/common": "^6.11.11",
         "@nestjs/core": "^6.11.11",
         "@nestjs/platform-express": "^6.11.11",

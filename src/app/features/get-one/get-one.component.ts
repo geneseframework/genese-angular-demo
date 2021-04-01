@@ -46,7 +46,7 @@ export class GetOneComponent implements OnInit {
         this.http.get(path).subscribe(async (book: any) => {
             console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
             const mapped: Book = create(Book, book);
-            console.log('%c Get one book ', 'font-weight: bold; color: magenta;', mapped);
+            console.log('%c Get one book with @genese/mapper ', 'font-weight: bold; color: magenta;', mapped);
         });
     }
 }
