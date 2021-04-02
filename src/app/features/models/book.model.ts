@@ -1,4 +1,4 @@
-import { GeneseModelEnvironment } from 'genese-angular';
+import { GeneseModelEnvironment } from '@genese/angular';
 import { Category } from '../enums/category';
 import { Author } from '../../../../backend/src/app/models/author.model';
 

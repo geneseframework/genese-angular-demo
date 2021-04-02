@@ -1,6 +1,4 @@
-import { GeneseModelEnvironment, ArrayResponse } from 'genese-angular';
-import { Category } from '../enums/category';
-import { Author } from '../../../../backend/src/app/models/author.model';
+import { ArrayResponse, GeneseModelEnvironment } from '@genese/angular';
 
 
 export class ArrayOfStrings implements ArrayResponse {

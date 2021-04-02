@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Genese, GeneseService } from 'genese-angular';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Book } from '../models/book.model';
 import { create } from '@genese/mapper/dist/create/main';
+import { Genese, GeneseService } from '@genese/angular';
 
 
 @Component({
