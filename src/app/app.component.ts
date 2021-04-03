@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
-import { GeneseEnvironmentService } from 'genese-angular';
+import { GeneseEnvironmentService } from '@genese/angular';
 
 @Component({
   selector: 'app-root',

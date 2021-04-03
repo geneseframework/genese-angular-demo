@@ -1,4 +1,4 @@
-import { ArrayResponse, GeneseModelEnvironment } from 'genese-angular';
+import { ArrayResponse, GeneseModelEnvironment } from '@genese/angular';
 
 
 export class ArrayOfArraysOfStrings implements ArrayResponse {

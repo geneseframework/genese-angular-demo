@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Genese, GeneseService } from 'genese-angular';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { HttpClient } from '@angular/common/http';
 import { geneseEnv } from '../../../genese.config';
 import { Book } from '../models/book.model';
 import { create } from '@genese/mapper/dist/create/main';
+import { Genese, GeneseService } from '@genese/angular';
 
 
 @Component({
@@ -21,7 +21,6 @@ export class GetOneComponent implements OnInit {
         }
     };
 
-
     constructor(
         private geneseService: GeneseService,
         private http: HttpClient
@@ -31,8 +30,28 @@ export class GetOneComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.getBookWithGeneseAngularV0('1')
+        this.getBookWithGeneseAngularV1('/books/1')
         this.getBook('1');
         this.getBook('/books/1');
+    }
+
+
+    getBookWithGeneseAngularV0(path: string): void {
+        this.geneseService.getGeneseInstance(Book)
+            .getOne(path)
+            .subscribe((response: Book) => {
+                console.log('%c Get book with @genese/angular v0', 'font-weight: bold; color: cyan;', response);
+            });
+    }
+
+
+    getBookWithGeneseAngularV1(path: string): void {
+        this.geneseService.instance(Book)
+            .get(path)
+            .subscribe((response: Book) => {
+                console.log('%c Get book with @genese/angular v1', 'font-weight: bold; color: magenta;', response);
+            });
     }
 
 
@@ -42,7 +61,7 @@ export class GetOneComponent implements OnInit {
      */
     getBook(idOrPath: string): void {
         const path = `${geneseEnv.api}${idOrPath}`;
-        console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
+        // console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
         this.http.get(path).subscribe(async (book: any) => {
             console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
             const mapped: Book = create(Book, book);

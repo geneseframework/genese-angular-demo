@@ -1,4 +1,4 @@
-import { RequestMethod, TConstructor } from 'genese-angular';
+import { RequestMethod, TConstructor } from '@genese/angular';
 
 export class Endpoint {
     path: string;

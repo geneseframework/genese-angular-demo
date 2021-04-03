@@ -3,7 +3,7 @@ import { GeneseConfig } from '@genese/mapper/dist/create/models/genese-config.mo
 export const geneseConfig: GeneseConfig = {
     mapper: {
         behavior: {
-            differentiateStringsAndNumbers: true,
+            castStringsAndNumbers: true,
         },
         include: [],
         tsConfigs: [

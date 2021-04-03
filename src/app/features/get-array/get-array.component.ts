@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Genese, GeneseService } from 'genese-angular';
+import { Genese, GeneseService } from '@genese/angular';
 import { ArrayOfArraysOfStrings } from '../models/arrayOfArraysOfStrings.model';
 import { ArrayOfStrings } from '../models/arrayOfStrings.model';
 import { ArrayOfArraysOfBooks } from '../models/arrayOfArraysOfBooks.model';

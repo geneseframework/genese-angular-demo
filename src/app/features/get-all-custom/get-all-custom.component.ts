@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/book.model';
-import { Genese, GeneseService } from 'genese-angular';
-import { homeEnv } from '../homeEnv';
+import { Genese, GeneseService } from '@genese/angular';
 
 
 @Component({
