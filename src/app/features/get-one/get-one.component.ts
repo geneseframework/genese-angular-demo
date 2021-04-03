@@ -21,7 +21,6 @@ export class GetOneComponent implements OnInit {
         }
     };
 
-
     constructor(
         private geneseService: GeneseService,
         private http: HttpClient
