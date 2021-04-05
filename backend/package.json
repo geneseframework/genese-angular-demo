@@ -10,7 +10,7 @@
         "reinstall-genese-angular": "npm uninstall @genese/angular && npm i @genese/angular",
         "reinstall-genese-mapper": "npm uninstall @genese/mapper && npm i @genese/mapper",
         "remove-and-reinstall-genese-mapper": "rm package-lock.json && rm -rf node_modules/@genese && npm run reinstall-genese-mapper",
-        "restart": "npm run reinstall-genese-angular && npm run init-mapper && npm run start",
+        "restart": "npm run reinstall-genese-mapper && npm run init-mapper && npm run start",
         "format": "prettier --write \"src/**/*.ts\"",
         "start": "ts-node -r tsconfig-paths/register src/main.ts",
         "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
@@ -23,7 +23,7 @@
         "test:e2e": "jest --config ./test/jest-e2e.json"
     },
     "dependencies": {
-        "@genese/angular": "^2.0.0-alpha.0",
+        "@genese/angular": "^2.0.0-alpha.2",
         "@genese/mapper": "^2.0.0-alpha.20",
         "@nestjs/common": "^6.11.11",
         "@nestjs/core": "^6.11.11",

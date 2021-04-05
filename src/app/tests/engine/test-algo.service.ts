@@ -2,7 +2,7 @@ import { TESTS } from './tests.const';
 import { isTestIt, TestType } from './test-type.type';
 import { logg } from '../../utils/logger.util';
 import { create } from '@genese/mapper/dist/create/main';
-import { isSameObject } from '@genese/mapper/dist/shared/core/utils/functions/is-same-object.util';
+import { isSameObject } from '@genese/core';
 const MAX_DURATION = 50;
 
 export async function expect(testTypes: TestType[]): Promise<void> {
