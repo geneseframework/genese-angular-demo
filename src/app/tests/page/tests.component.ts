@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { startTests } from '../engine/start-tests';
+import { OnePrimitiveClassSpec } from '../examples/classes.spec';
+import { create } from '@genese/mapper/dist/create/main';
 
 
 @Component({
@@ -22,7 +24,11 @@ export class TestsComponent implements OnInit {
 
 
     async tests(): Promise<void> {
-        await startTests();
+        const zzz: OnePrimitiveClassSpec = create(OnePrimitiveClassSpec, {prop: 'zzz'});
+        console.log('%c First tests OnePrimitiveClassSpec correct ', 'font-weight: bold; color: magenta;', zzz);
+        const aaa: OnePrimitiveClassSpec = create(OnePrimitiveClassSpec, {prop: 2});
+        console.log('%c First tests OnePrimitiveClassSpec wrong ', 'font-weight: bold; color: magenta;', aaa);
+        // await startTests();
         // const data = {name: 'Léa', friend: {name: 'Léo'}};
         // const person: Person = await Mapper.create(Person, data) as any;
         // console.log('%c First tests ', 'font-weight: bold; color: magenta;', person);
