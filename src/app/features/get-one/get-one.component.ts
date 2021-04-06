@@ -63,7 +63,7 @@ export class GetOneComponent implements OnInit {
         const path = `${geneseEnv.api}${idOrPath}`;
         // console.log('%c Will get one book ', 'font-weight: bold; color: green;', path);
         this.http.get(path).subscribe(async (book: any) => {
-            console.log('%c Get one book ', 'font-weight: bold; color: cyan;', book);
+            console.log('%c Get one book yuhtgwith classic http call ', 'font-weight: bold; color: cyan;', book);
             const mapped: Book = create(Book, book);
             console.log('%c Get one book with @genese/mapper ', 'font-weight: bold; color: magenta;', mapped);
         });
