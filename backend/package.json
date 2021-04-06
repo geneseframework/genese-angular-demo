@@ -24,7 +24,7 @@
     },
     "dependencies": {
         "@genese/angular": "^2.0.0-alpha.2",
-        "@genese/mapper": "^2.1.0-alpha.0",
+        "@genese/mapper": "^2.1.0",
         "@nestjs/common": "^6.11.11",
         "@nestjs/core": "^6.11.11",
         "@nestjs/platform-express": "^6.11.11",
